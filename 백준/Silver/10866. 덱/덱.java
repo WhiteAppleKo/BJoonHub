@@ -1,12 +1,14 @@
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayDeque;
+import java.util.StringTokenizer;
  
 public class Main {
 	public static void main(String[] args) throws IOException {
  
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st;
  
 		ArrayDeque<Integer> dq = new ArrayDeque<Integer>();
 		StringBuilder sb = new StringBuilder();
@@ -15,17 +17,17 @@ public class Main {
  
 		for (int i = 0; i < N; i++) {
  
-			String[] s = br.readLine().split(" ");
+			st = new StringTokenizer(br.readLine(), " ");
  
-			switch (s[0]) {
+			switch (st.nextToken()) {
  
 				case "push_front": {
-					dq.addFirst(Integer.parseInt(s[1]));
+					dq.addFirst(Integer.parseInt(st.nextToken()));
 					break;
 				}
 				
 				case "push_back": {
-					dq.addLast(Integer.parseInt(s[1]));
+					dq.addLast(Integer.parseInt(st.nextToken()));
 					break;
 				}
  
